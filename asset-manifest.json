@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/use-effect-react/static/css/main.95d17044.css",
-    "main.js": "/use-effect-react/static/js/main.45684874.js",
+    "main.css": "/use-effect-react/static/css/main.ccece409.css",
+    "main.js": "/use-effect-react/static/js/main.dc464558.js",
     "index.html": "/use-effect-react/index.html",
-    "main.95d17044.css.map": "/use-effect-react/static/css/main.95d17044.css.map",
-    "main.45684874.js.map": "/use-effect-react/static/js/main.45684874.js.map"
+    "main.ccece409.css.map": "/use-effect-react/static/css/main.ccece409.css.map",
+    "main.dc464558.js.map": "/use-effect-react/static/js/main.dc464558.js.map"
   },
   "entrypoints": [
-    "static/css/main.95d17044.css",
-    "static/js/main.45684874.js"
+    "static/css/main.ccece409.css",
+    "static/js/main.dc464558.js"
   ]
 }
