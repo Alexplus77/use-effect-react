@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import "App.css";
 import { List } from "components/List";
@@ -10,7 +10,7 @@ const App = () => {
   const [detailsUser, setDetails] = useState(null);
   const [isActive, setActive] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [openList, setList] = useState(false);
+  const [index, setIndex] = useState(3);
 
   useEffect(() => {
     axios
@@ -28,14 +28,26 @@ const App = () => {
       })
       .catch((err) => console.log(err));
   }, [isActive]);
+  const listGroup = useRef();
+
+  useEffect(() => {
+    document.addEventListener("click", (e) => handleClose(e), true);
+    return () => {
+      document.removeEventListener("click", (e) => handleClose(e), true);
+    };
+  }, []);
+
+  const handleClose = (e) => {
+    e.target.parentElement !== listGroup.current && setIndex(3);
+  };
 
   const handleClick = (id) => {
     setLoading(true);
     setActive(id);
   };
 
-  const handleOpen = () => {
-    setList(!openList);
+  const handleOpenList = () => {
+    setIndex(usersList.length);
   };
 
   return (
@@ -43,9 +55,10 @@ const App = () => {
       <List
         usersList={usersList}
         handleClick={handleClick}
-        handleOpen={handleOpen}
+        handleOpenList={handleOpenList}
         isActive={isActive}
-        openList={openList}
+        listGroup={listGroup}
+        index={index}
       />
       {loading ? (
         <Loading />

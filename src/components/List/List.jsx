@@ -1,13 +1,17 @@
 import "App.css";
 import { ListItem } from "../ListItem";
-import cn from "classnames";
-const List = ({ usersList, handleClick, isActive, handleOpen, openList }) => {
-  let index;
-  openList ? (index = usersList.length) : (index = 3);
 
+const List = ({
+  usersList,
+  handleClick,
+  isActive,
+  handleOpenList,
+  listGroup,
+  index,
+}) => {
   return (
     <div className="container-list">
-      <ul className="list-group">
+      <ul className="list-group" ref={listGroup}>
         {usersList?.slice(0, index).map(({ id, name }) => (
           <ListItem
             key={id}
@@ -15,11 +19,14 @@ const List = ({ usersList, handleClick, isActive, handleOpen, openList }) => {
             name={name}
             handleClick={handleClick}
             isActive={isActive}
+            index={index}
           />
         ))}
-        <li onClick={handleOpen} className="list-group-item">
-          ...
-        </li>
+        {index <= 3 && (
+          <li onClick={handleOpenList} className="list-group-item">
+            ...
+          </li>
+        )}
       </ul>
     </div>
   );
