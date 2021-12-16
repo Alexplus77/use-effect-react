@@ -1,6 +1,6 @@
 import "App.css";
 
-const Details = ({ detailsUser, loading }) => {
+const Details = ({ detailsUser }) => {
   const { name, avatar, details } = detailsUser;
   return (
     <div className="container-details">

@@ -10,6 +10,7 @@ const App = () => {
   const [detailsUser, setDetails] = useState(null);
   const [isActive, setActive] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [openList, setList] = useState(false);
 
   useEffect(() => {
     axios
@@ -33,12 +34,18 @@ const App = () => {
     setActive(id);
   };
 
+  const handleOpen = () => {
+    setList(!openList);
+  };
+
   return (
     <div className="container">
       <List
         usersList={usersList}
         handleClick={handleClick}
+        handleOpen={handleOpen}
         isActive={isActive}
+        openList={openList}
       />
       {loading ? (
         <Loading />
