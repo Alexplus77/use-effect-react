@@ -39,6 +39,7 @@ const App = () => {
 
   const handleClose = (e) => {
     e.target.parentElement !== listGroup.current && setIndex(3);
+    setActive(false);
   };
 
   const handleClick = (id) => {
