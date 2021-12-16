@@ -17,17 +17,19 @@ const App = () => {
       .then(({ data }) => setUsersList(data))
       .catch((err) => console.log(err));
   }, []);
-  console.log(isActive);
+
   useEffect(() => {
-    setLoading(true);
     axios
       .get(process.env.REACT_APP_URL_DETAILS + `${isActive}.json`)
-      .then(({ data }) => setDetails(data))
+      .then(({ data }) => {
+        setDetails(data);
+        setLoading(false);
+      })
       .catch((err) => console.log(err));
-    setLoading(false);
   }, [isActive]);
 
   const handleClick = (id) => {
+    setLoading(true);
     setActive(id);
   };
 

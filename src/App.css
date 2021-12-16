@@ -1,6 +1,7 @@
 body{
   display: grid;
   justify-items: center;
+  font-family: 'Roboto', sans-serif;
 }
 .container{
   display: grid;
@@ -14,4 +15,10 @@ body{
 }
 .list-group-item{
   cursor: pointer;
+}
+.d-flex{
+  align-self: center;
+}
+img{
+  height: 45vh;
 }

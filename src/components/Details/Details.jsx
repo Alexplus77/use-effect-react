@@ -1,13 +1,16 @@
 import "App.css";
 
-const Details = ({ detailsUser }) => {
-  const { name, avatar, details } = detailsUser || defaultDetails;
+const Details = ({ detailsUser, loading }) => {
+  const { name, avatar, details } = detailsUser;
   return (
     <div className="container-details">
       <div className="card" style={{ width: "19rem" }}>
         <img src={avatar} className="card-img-top" alt="..." />
-        <h5 className="card-title">{name}</h5>
         <ul className="list-group list-group-flush">
+          <li style={{ fontSize: "20px" }} className="list-group-item">
+            {" "}
+            {name}
+          </li>
           <li className="list-group-item">City: {details.city}</li>
           <li className="list-group-item">Company: {details.company}</li>
           <li className="list-group-item">Position: {details.position}</li>
@@ -16,9 +19,5 @@ const Details = ({ detailsUser }) => {
     </div>
   );
 };
-const defaultDetails = {
-  name: "name",
-  avatar: "avatar",
-  details: "details",
-};
+
 export { Details };
