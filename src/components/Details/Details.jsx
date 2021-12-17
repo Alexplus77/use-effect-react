@@ -3,6 +3,7 @@ import "App.css";
 
 const Details = ({ userInfo }) => {
   const { name, avatar, details } = userInfo;
+  const { city, company, position } = details;
   return (
     <div className="container-details">
       <div className="card" style={{ width: "19rem" }}>
@@ -12,9 +13,9 @@ const Details = ({ userInfo }) => {
             {" "}
             {name}
           </li>
-          <li className="list-group-item">City: {details.city}</li>
-          <li className="list-group-item">Company: {details.company}</li>
-          <li className="list-group-item">Position: {details.position}</li>
+          <li className="list-group-item">City: {city}</li>
+          <li className="list-group-item">Company: {company}</li>
+          <li className="list-group-item">Position: {position}</li>
         </ul>
       </div>
     </div>
