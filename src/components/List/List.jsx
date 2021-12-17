@@ -1,3 +1,4 @@
+import React from "react";
 import "App.css";
 import { ListItem } from "../ListItem";
 
@@ -7,22 +8,22 @@ const List = ({
   isActive,
   handleOpenList,
   listGroup,
-  index,
+  countList,
+  initialCountList,
 }) => {
   return (
     <div className="container-list">
       <ul className="list-group" ref={listGroup}>
-        {usersList?.slice(0, index).map(({ id, name }) => (
+        {usersList?.slice(0, countList).map(({ id, name }) => (
           <ListItem
             key={id}
             id={id}
             name={name}
             handleClick={handleClick}
             isActive={isActive}
-            index={index}
           />
         ))}
-        {index <= 3 && (
+        {countList <= initialCountList && (
           <li onClick={handleOpenList} className="list-group-item">
             ...
           </li>

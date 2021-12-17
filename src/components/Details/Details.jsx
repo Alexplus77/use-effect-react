@@ -1,7 +1,8 @@
+import React from "react";
 import "App.css";
 
-const Details = ({ detailsUser }) => {
-  const { name, avatar, details } = detailsUser;
+const Details = ({ userInfo }) => {
+  const { name, avatar, details } = userInfo;
   return (
     <div className="container-details">
       <div className="card" style={{ width: "19rem" }}>
