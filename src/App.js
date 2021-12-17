@@ -36,20 +36,20 @@ const App = () => {
   const listGroup = useRef();
 
   useEffect(() => {
-    document.addEventListener("click", (e) => handleClose(e), true);
+    document.addEventListener("click", (e) => handleCloseList(e), true);
     return () => {
-      document.removeEventListener("click", (e) => handleClose(e), true);
+      document.removeEventListener("click", (e) => handleCloseList(e), true);
     };
   }, [isActive]);
 
-  const handleClose = (e) => {
+  const handleCloseList = (e) => {
     if (e.target.parentElement !== listGroup.current) {
       setCountList(initialCountList);
       setActive(null);
     }
   };
 
-  const handleClick = (id) => {
+  const handleOpenUserInfo = (id) => {
     if (id !== isActive) {
       setLoading(true);
       setActive(id);
@@ -64,7 +64,7 @@ const App = () => {
     <div className="container">
       <List
         usersList={usersList}
-        handleClick={handleClick}
+        handleOpenUserInfo={handleOpenUserInfo}
         handleOpenList={handleOpenList}
         isActive={isActive}
         listGroup={listGroup}

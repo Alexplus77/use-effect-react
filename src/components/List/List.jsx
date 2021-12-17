@@ -4,7 +4,7 @@ import { ListItem } from "../ListItem";
 
 const List = ({
   usersList,
-  handleClick,
+  handleOpenUserInfo,
   isActive,
   handleOpenList,
   listGroup,
@@ -19,7 +19,7 @@ const List = ({
             key={id}
             id={id}
             name={name}
-            handleClick={handleClick}
+            handleOpenUserInfo={handleOpenUserInfo}
             isActive={isActive}
           />
         ))}

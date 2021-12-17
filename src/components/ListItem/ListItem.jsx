@@ -1,9 +1,9 @@
 import React from "react";
 import "App.css";
 import cn from "classnames";
-const ListItem = ({ name, id, handleClick, isActive }) => (
+const ListItem = ({ name, id, handleOpenUserInfo, isActive }) => (
   <li
-    onClick={(e) => handleClick(id)}
+    onClick={(e) => handleOpenUserInfo(id)}
     className={cn("list-group-item", { active: isActive === id })}
   >
     {name}
